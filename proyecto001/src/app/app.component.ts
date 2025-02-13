@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyecto001';
+
+  nombre = "Javier";
+  edad = 51;
+  fumador = false;
+
+  esFumador() {
+    return this.fumador ? 'Sí' : 'No';
+  }
 }
