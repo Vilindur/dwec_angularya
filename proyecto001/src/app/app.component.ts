@@ -8,12 +8,32 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyecto001';
+  nombre:string = 'Alejandro';
+  fumador=false;
+  notas:Array<number> = [8.6,1.33,6.11,7.25];
+  edad:number = 24;
+  contador:number = 0;
 
-  nombre = "Javier";
-  edad = 51;
-  fumador = false;
+  esfumador() {
+    return this.fumador?"sí es fumador":"no es fumador";
+  }
 
-  esFumador() {
-    return this.fumador ? 'Sí' : 'No';
+  provincias = [
+    {id:1, nombre:"Huelva"},
+    {id:2, nombre:"Málaga"},
+    {id:3, nombre:"Cádiz"},
+    {id:4, nombre:"Sevilla"}
+  ];
+
+  pulsarBoton() {
+    alert("Botón pulsado");
+  }
+
+  incrementar() {
+    this.contador++;
+  }
+
+  decrementar() {
+    this.contador--;
   }
 }

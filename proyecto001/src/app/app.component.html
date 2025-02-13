@@ -1,4 +1,42 @@
 <div>
-  <h1>Tu nombre {{nombre}} y tienes {{edad}} años</h1>
-  <p>{{esFumador()}}</p>
+  <h1>Tu nombre es {{nombre}} {{esfumador()}} notas: {{notas}}</h1>
+  <!-- FORMA 1-->
+  <p *ngIf="edad>=18; else menor">Es mayor de edad</p>
+  <ng-template #menor><p>Es menor de edad</p></ng-template>
+
+  <!-- FORMA 2-->
+  <!-- <p *ngIf="edad>=18">Es mayor de edad</p>
+  <p *ngIf="edad<18">Es menor de edad</p> -->
+
+  <ul>
+      <li *ngFor="let nota of notas">{{nota}}</li>
+  </ul>
+
+  <table border="1px solid black">
+      <thead>
+          <th>Nota</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let nota of notas">
+              <td>{{nota}}</td>
+          </tr>
+      </tbody>
+  </table>
+
+  
+  <select name="" id="provincias">
+      <option *ngFor="let provincia of provincias" value="{{provincia.id}}">{{provincia.nombre}}</option>
+  </select>
+
+  <button (click)="pulsarBoton()">Pulsa</button>
+
+  <div>
+      <p>{{contador}}</p>
+      <button (click)="incrementar()">Incrementar</button>
+      <button (click)="decrementar()">Decrementar</button>
+  </div>
+
+  <input type="text" [(ngModel)]="nombre">
+
+  <p>{{nombre}}</p>
 </div>
